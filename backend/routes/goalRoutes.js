@@ -2,15 +2,15 @@ const express = require('express')
 const router = express.Router()
 //these two lines are how you import the express router
 
-const {getGoals, postGoals, editGoals, deleteGoals} = require('../controllers/goalControllers')
+const {getGoals, setGoals, updateGoals, deleteGoals} = require('../controllers/goalControllers')
 //this is bringing in the routing logic function from the controller file
 
 router.get('/', getGoals)
 
 
-router.post('/',postGoals)
+router.post('/',setGoals)
 
-router.put('/:id', editGoals)
+router.put('/:id', updateGoals)
 
 
 router.delete('/:id',deleteGoals)
