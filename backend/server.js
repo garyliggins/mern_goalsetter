@@ -16,7 +16,9 @@ connectDB(); //running the function to connect to mongodb
 
 //routes
 app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
 //this is telling express in order to use this route '/api/goals' go to this file './routes/goalRoutes' where the route lives now
+
 app.use(errorHandler) //this is also required to use the error handler
 
 
