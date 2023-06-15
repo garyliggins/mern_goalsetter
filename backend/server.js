@@ -21,13 +21,17 @@ app.use('/api/users', require('./routes/userRoutes'))
 //this is telling express in order to use this route '/api/goals' go to this file './routes/goalRoutes' where the route lives now
 
 //serve frotnend
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname,'../frontend/build')))
-
-    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')) )
-} else {
-    app.get('/', (req,res) => res.send('Please set to production'))
-}
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../frontend/build')));
+  
+    app.get('*', (req, res) =>
+      res.sendFile(
+        path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+      )
+    );
+  } else {
+    app.get('/', (req, res) => res.send('Please set to production'));
+  }
 
 app.use(errorHandler) //this is also required to use the error handler
 

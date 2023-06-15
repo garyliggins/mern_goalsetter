@@ -10,6 +10,7 @@ const getGoals =asyncHandler( async (req, res) => {
     const goals = await Goal.find({user: req.user.id})
     
     res.status(200).json(goals)
+    
 })
 //this function is abstracting the logic from the goal route and putting it into a function. whne we go back to the goalRoutes file, instead of writing the logic for the callback function we would just use the function name
 
