@@ -6,6 +6,7 @@ import GoalItem from '../Components/GoalItem'
 import Spinner from '../Components/Spinner'
 import { getGoals, reset } from '../features/goals/goalSlice'
 
+
 function Dashboard() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -29,7 +30,8 @@ function Dashboard() {
     return () => {
       dispatch(reset())
     }
-  }, [user, navigate, isError, message, dispatch])
+  }, [user,dispatch])
+  
 
   if (isLoading) {
     return <Spinner />
